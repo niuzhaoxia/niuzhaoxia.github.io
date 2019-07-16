@@ -249,6 +249,616 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/07/09/js的n种继承方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/09/js的n种继承方式/" itemprop="url">js的n种继承方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T19:13:02+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/07/09/http-tcp知识整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/09/http-tcp知识整理/" itemprop="url">http/tcp知识整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T10:44:17+08:00">
+                2019-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="HTTP介绍"><a href="#HTTP介绍" class="headerlink" title="HTTP介绍"></a>HTTP介绍</h3><p>HTTP协议（HyperText Transfer Protocol，超文本传输协议）是因特网上应用最为广泛的一种网络传输协议，所有的WWW文件都必须遵守这个标准。它是是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。</p>
+<p>HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。</p>
+<h3 id="HTTP消息结构"><a href="#HTTP消息结构" class="headerlink" title="HTTP消息结构"></a>HTTP消息结构</h3><p>HTTP是基于客户端/服务端（C/S）的架构模型，通过一个可靠的链接来交换信息，是一个无状态的请求/响应协议。<br>一个HTTP”客户端”是一个应用程序（Web浏览器或其他任何客户端），通过连接到服务器达到向服务器发送一个或多个HTTP的请求的目的。<br>一个HTTP”服务器”同样也是一个应用程序（通常是一个Web服务，如Apache Web服务器或IIS服务器等），通过接收客户端的请求并向客户端发送HTTP响应数据。<br>HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。<br>一旦建立连接后，数据消息就通过类似Internet邮件所使用的格式[RFC5322]和多用途Internet邮件扩展（MIME）[RFC2045]来传送。</p>
+<h3 id="HTTP传输流"><a href="#HTTP传输流" class="headerlink" title="HTTP传输流"></a>HTTP传输流</h3><img src="https://user-gold-cdn.xitu.io/2018/4/17/162d19df66466f6b?imageslim">
+
+<h3 id="请求报文"><a href="#请求报文" class="headerlink" title="请求报文"></a>请求报文</h3><p>客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成</p>
+<img src="/images/报文.png" class="[class names]">
+
+
+<h3 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h3><p>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。</p>
+<p>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD方法。<br>HTTP1.1 新增了五种请求方法：OPTIONS、PUT、DELETE、TRACE 和 CONNECT 方法。</p>
+<ul>
+<li>OPTIONS 允许客户端查看服务器的性能。</li>
+<li>PUT 从客户端向服务器传送的数据取代指定的文档的内容。</li>
+<li>DELETE 请求服务器删除指定的页面。</li>
+<li>TRACE    回显服务器收到的请求，主要用于测试或诊断。</li>
+<li>CONNECT HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</li>
+</ul>
+<h3 id="HTTP常用的状态码"><a href="#HTTP常用的状态码" class="headerlink" title="HTTP常用的状态码"></a>HTTP常用的状态码</h3><blockquote>
+<p>2XX 成功</p>
+</blockquote>
+<ul>
+<li>200 OK，表示从客户端发来的请求在服务器端被正确处理</li>
+<li>204 No content，表示请求成功，但响应报文不含实体的主体部分</li>
+<li>206 Partial Content，进行范围请求</li>
+</ul>
+<blockquote>
+<p>3XX 重定向</p>
+</blockquote>
+<ul>
+<li>301 moved permanently，永久性重定向，表示资源已被分配了新的 URL</li>
+<li>302 found，临时性重定向，表示资源临时被分配了新的 URL</li>
+<li>303 see other，表示资源存在着另一个 URL，应使用 GET 方法丁香获取资源</li>
+<li>304 not modified，表示服务器允许访问资源，但因发生请求未满足条件的情况</li>
+<li>307 temporary redirect，临时重定向，和302含义相同</li>
+</ul>
+<blockquote>
+<p>4XX 客户端错误</p>
+</blockquote>
+<ul>
+<li>400 bad request，请求报文存在语法错误</li>
+<li>401 unauthorized，表示发送的请求需要有通过 HTTP 认证的认证信息</li>
+<li>403 forbidden，表示对请求资源的访问被服务器拒绝</li>
+<li>404 not found，表示在服务器上没有找到请求的资源</li>
+</ul>
+<blockquote>
+<p>5XX 服务器错误</p>
+</blockquote>
+<ul>
+<li>500 internal sever error，表示服务器端在执行请求时发生了错误</li>
+<li>503 service unavailable，表明服务器暂时处于超负载或正在停机维护，无法处理请求</li>
+</ul>
+<h4 id="304-浏览器缓存机制"><a href="#304-浏览器缓存机制" class="headerlink" title="304 浏览器缓存机制"></a>304 浏览器缓存机制</h4><img src="/images/http-cache.jpg">
+<blockquote><p>缓存过程 -&gt; 强制缓存和协商缓存</p>
+<footer><strong>HeyingYe</strong><cite><a href="https://heyingye.github.io/2018/04/16/%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/" target="_blank" rel="noopener">彻底理解浏览器的缓存机制</a></cite></footer></blockquote>
+<h3 id="HTTP三点注意事项："><a href="#HTTP三点注意事项：" class="headerlink" title="HTTP三点注意事项："></a>HTTP三点注意事项：</h3><ul>
+<li>HTTP是<code>无连接</code>：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。</li>
+<li>HTTP是<code>媒体独立</code>的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</li>
+<li>HTTP是<code>无状态</code>：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。</li>
+</ul>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ul>
+<li>客户端–发送带有SYN标志的数据包–一次握手–服务端</li>
+<li>服务端–发送带有SYN/ACK标志的数据包–二次握手–客户端</li>
+<li>客户端–发送带有带有ACK标志的数据包–三次握手–服务端</li>
+</ul>
+<img src="/images/三次握手.png">
+
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><ul>
+<li>客户端-发送一个FIN，用来关闭客户端到服务器的数据传送</li>
+<li>服务器-收到这个FIN，它发回一个ACK，确认序号为收到的序号加1 。和SYN一样，一个FIN将占用一个序号</li>
+<li>服务器-关闭与客户端的连接，发送一个FIN给客户端</li>
+<li>客户端-发回ACK报文确认，并将确认序号设置为收到序号加1</li>
+</ul>
+<img src="/images/四次挥手.png">
+
+<h3 id="TCP与UDP的区别："><a href="#TCP与UDP的区别：" class="headerlink" title="TCP与UDP的区别："></a>TCP与UDP的区别：</h3><ul>
+<li>基于连接与无连接；</li>
+<li>对系统资源的要求（TCP较多，UDP少）；</li>
+<li>UDP程序结构较简单；</li>
+<li>流模式与数据报模式 ；</li>
+<li>TCP保证数据正确性，UDP可能丢包；</li>
+<li>TCP保证数据顺序，UDP不保证。</li>
+</ul>
+<h2 id="文章参考："><a href="#文章参考：" class="headerlink" title="文章参考："></a>文章参考：</h2><blockquote><footer><strong>白伟业</strong><cite><a href="https://juejin.im/post/5ad4094e6fb9a028d7011069" target="_blank" rel="noopener">tcp、http面试指南</a></cite></footer></blockquote>
+
+<blockquote><footer><strong>寻找海蓝96</strong><cite><a href="https://juejin.im/post/5d032b77e51d45777a126183" target="_blank" rel="noopener">http面试</a></cite></footer></blockquote>
+
+<blockquote><footer><strong>github</strong><cite><a href="https://hit-alibaba.github.io/interview/basic/network/TCP.html" target="_blank" rel="noopener">tcp协议</a></cite></footer></blockquote>
+
+<blockquote><footer><strong>陈宝佳</strong><cite><a href="https://zhuanlan.zhihu.com/p/24860273" target="_blank" rel="noopener">TCP和UDP的区别</a></cite></footer></blockquote>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/07/06/解决跨域问题的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/06/解决跨域问题的几种方法/" itemprop="url">解决跨域问题的几种方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-06T18:14:28+08:00">
+                2019-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><blockquote>
+<p>只要协议、域名、端口有任何一个不同，就被当作是不同的域。基于浏览器的同源策略限制，浏览器阻止跨域请求（严格来讲浏览器只是拒绝跨域的读操作，允许跨域写操作和跨域资源嵌入的），因此我们需要通过一些方法使本域下的js能够操作其他域下的页面对象。</p>
+</blockquote>
+<p>以下是跨域的几种情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">URL                      说明       是否允许通信</span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名下   允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/lab/a.js</span><br><span class="line">http://www.a.com/script/b.js 同一域名下不同文件夹 允许</span><br><span class="line"></span><br><span class="line">http://www.a.com:8000/a.js</span><br><span class="line">http://www.a.com/b.js     同一域名，不同端口  不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">https://www.a.com/b.js 同一域名，不同协议 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://70.32.92.74/b.js 域名和域名对应ip 不允许</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://script.a.com/b.js 主域相同，子域不同 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.a.com/a.js</span><br><span class="line">http://a.com/b.js 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）</span><br><span class="line"></span><br><span class="line">http://www.cnblogs.com/a.js</span><br><span class="line">http://www.a.com/b.js 不同域名 不允许</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="通过CORS跨域"><a href="#通过CORS跨域" class="headerlink" title="通过CORS跨域"></a>通过CORS跨域</h4><p>后端设置响应头：Access-Control-Allow-Origin: * 表明该资源可以被任意外域访问。</p>
+<h3 id="通过JSONP跨域"><a href="#通过JSONP跨域" class="headerlink" title="通过JSONP跨域"></a>通过JSONP跨域</h3><blockquote>
+<p>jsonp跨域原理是src引入外部文件不受同源策略的约束。</p>
+</blockquote>
+<p>假设a页面想要获取其他域中的某个数据，我们就可以在a页面中声明一个jsonCallback函数，想要获取的json数据的地址是<a href="http://example.com/data.js，所以我们在a页面需要完成的代码如下：" target="_blank" rel="noopener">http://example.com/data.js，所以我们在a页面需要完成的代码如下：</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`a.html`</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">jsonCallback</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">    &#125; </span><br><span class="line">    &lt;script src=<span class="string">"http://example.com/data.js?callback=jsonCallback"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中src数据地址中还有一个参数callback，这个参数名是由后端规定，前端直接使用不能随意更改的。<br>引入的这个js文件中只有一个函数执行，这个函数就是前端作为参数传过去的<code>jsonCallback</code>，函数执行的参数也就是后端传给前端的数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`jsonp.js`</span></span><br><span class="line">    jsonCallback(&#123;</span><br><span class="line">        list:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>],</span><br><span class="line">        errorCode:<span class="number">0</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>运行结果是，控制台输出一个对象{list:list:[1,2,3,4,5,6,7], errorCode:0}。</p>
+<p>JQ对jsonp进行了封装，操作更加简单，前端不用自己声明函数来接收数据，在使用前需要引入jQuery，只支持GET请求不支持其他类型的http请求。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">''</span>,</span><br><span class="line">    dataType: <span class="string">'jsonp'</span>,</span><br><span class="line">    jsonp: <span class="string">'callback'</span>, <span class="comment">// 一般由后端规定</span></span><br><span class="line">    jsonpCallback: <span class="string">'cbFn'</span>, <span class="comment">// 可有可无</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(data)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="proxy代理"><a href="#proxy代理" class="headerlink" title="proxy代理"></a>proxy代理</h3><blockquote>
+<p>通过第三方代理服务器访问远程，也叫作请求转接</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">proxy: &#123;</span><br><span class="line">            <span class="comment">// 只对本地开发起作用</span></span><br><span class="line">    <span class="string">"^/api"</span>: &#123;</span><br><span class="line">                target: <span class="string">"https://www.easy-mock.com/mock/5bf0ee68643497494c87d289"</span>, <span class="comment">// 我们要转接到的域</span></span><br><span class="line">                ws: <span class="literal">true</span>, <span class="comment">// 默认true</span></span><br><span class="line">                changeOrigin: <span class="literal">true</span>, <span class="comment">// 是否改变域</span></span><br><span class="line">                pathRewrite: &#123;<span class="comment">// 路径重写</span></span><br><span class="line">                    <span class="comment">// "^/api": "/mock/5bf0ee68643497494c87d289/api", </span></span><br><span class="line">                    <span class="comment">// // "^/qqq": "/mock/5bf0ee68643497494c87d289/qqq", </span></span><br><span class="line">                    <span class="comment">// 假如我们的访问路径是以 /api开头的； 同意转到了/mock/24076/api 这个路径</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/14/promise原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/14/promise原理/" itemprop="url">promise原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:00+08:00">
+                2019-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Promise-是什么？"><a href="#Promise-是什么？" class="headerlink" title="Promise 是什么？"></a>Promise 是什么？</h3><blockquote>
+<p>Promise 对象用于表示一个异步操作的最终状态（完成或失败），以及该异步操作的结果值。Promise的出现解决了回调地狱的问题。</p>
+</blockquote>
+<h3 id="Promise-有几种状态？Promise-的特点是什么，分别有什么优缺点？"><a href="#Promise-有几种状态？Promise-的特点是什么，分别有什么优缺点？" class="headerlink" title="Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？"></a>Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？</h3><p>Promise 实例有三个状态：<code>fulfilled</code>、<code>rejected</code>、<code>pending</code></p>
+<ul>
+<li>pending：初始值</li>
+<li>fulfilled: 代表操作成功 由pending =&gt; fulfilled</li>
+<li>rejected: 代表操作失败 由pending =&gt; rejected</li>
+</ul>
+<p>Promise的状态转换过程是<code>不可逆</code>的，一旦发生改变就不会在变动；如果在new Promise()的回调函数中就没有执行成功函数也没有执行失败函数，那么Promise实例的状态一直是pending</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// resolved 和 rejected 只能执行一个</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolved, rejected</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">        resolved(<span class="string">'success'</span>) <span class="comment">// 成功的回调函数</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// setTimeout()是一个异步操作，会先执行rejected()</span></span><br><span class="line">    rejected(<span class="string">'failed'</span>) <span class="comment">// 失败的回调函数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">p.then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行结果：</span></span><br><span class="line"><span class="comment">// failed</span></span><br><span class="line"><span class="comment">// hello world</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>p.then() 的参数是两个回调函数，</p>
+</blockquote>
+<ol start="2">
+<li>Promise 构造函数是同步还是异步执行？then 呢？Promise 如何实现 then 处理？</li>
+<li>Promise 和 setTimeout 的区别？</li>
+<li>如何实现 Promise.all() ？</li>
+<li>如何实现 Promise.prototype.finally() ？</li>
+<li>all() 的用法？</li>
+</ol>
+<h3 id="手写Promise源码"><a href="#手写Promise源码" class="headerlink" title="手写Promise源码"></a>手写Promise源码</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/12/面向对象编程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -439,170 +1049,81 @@
       
         
           
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/12/闭包这个鬼/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="niuzhaoxia">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/headPortrait.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/12/闭包这个鬼/" itemprop="url">闭包这个鬼</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-12T20:05:18+08:00">
-                2019-06-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
             <blockquote>
-<p>闭包是什么呢？ 在介绍闭包之前需要引入<code>变量提升</code> 和 <code>作用域</code>两个概念。</p>
+<p>在数组类(Array) 原型对象中提供了很多供数组调用的属性方法，这些方法让我们能够更加方便的来操作数组</p>
 </blockquote>
-<h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><blockquote>
-<p>变量提升是浏览器的一种机制（ES5，但ES6中不存在变量提升）<br>变量提升（又称预解释），在JS代码执行之前，会对带var和带function的进行提前的声明和定义，对于带var的关键字会声明并赋值为undefined；对于带function的关键字会提前声明并赋值为函数体。变量提升结束之后，代码就会自上而下的执行。</p>
+<p>从以下几个方面对这些数组方法进行分类</p>
+<ul>
+<li>作用</li>
+<li>返回值</li>
+<li>是否改变原数组</li>
+</ul>
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><p>方法说明：向数组末尾添加 一项或多项<br>原数组：改变<br>返回值：添加后的数组长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向原数组添加一项或多项</span></span><br><span class="line"><span class="comment">// 改变后数组长度</span></span><br><span class="line"><span class="comment">// 改变原数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.push(<span class="number">1</span>, <span class="string">'hello'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 5  改变后数组长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 4, 5, 1, "hello"] 新数组</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift"></a>unshift</h3><p>方法说明：向数组开头添加 一项或多项<br>原数组：改变<br>返回值：添加后数组的长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.unshift(<span class="number">666</span>, <span class="string">'hello'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 5 =&gt; 修改后的数组长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [666, "hello", 1, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h3><p>方法说明：删除数组最后一项<br>原数组：改变<br>返回值：删除的那一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pop() 不接收参数, 一次只删除最后一项</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">11</span>, <span class="string">'Tom'</span>, <span class="number">45</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.pop()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 45</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [11, "Tom"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h3><p>方法说明：删除数组第一项<br>原数组：改变<br>返回值：删除的那一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不接收参数</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">8</span> , <span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.shift()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [8, 4]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p>数组的增删，具体使用分五种情况</p>
+<blockquote>
+<p>情况一：splice() 不传参数</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// f fn()&#123;&#125; 控制台输出函数体fn</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">12</span> <span class="comment">// 给a赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 在代码自上而下执行阶段，会跳过函数定义部分</span></span><br><span class="line">    <span class="keyword">let</span> obj = &#123;</span><br><span class="line">        name: <span class="string">'hello world'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
-
-<p><strong><code>变量提升中需要注意的几个点</code></strong></p>
-<ul>
-<li>自执行函数不参与变量提升</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// error 报错：fn未定义</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(h) <span class="comment">// undefined</span></span><br><span class="line">    <span class="keyword">var</span> h = <span class="number">12</span></span><br><span class="line">    <span class="built_in">console</span>.log(fn) <span class="comment">// 输出fn函数体</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>函数声明的优先级最高</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// 输出fn函数体</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn = <span class="number">12</span></span><br><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><blockquote>
-<p>作用域（栈内存）： 供JS代码执行的环境；<br>作用域分为三种：全局作用域、函数作用域、块级作用域（ES6）</p>
-</blockquote>
-<ul>
-<li>全局作用域：在页面一加载就已经形成</li>
-<li>函数作用域：在函数执行时形成</li>
-<li>块级作用域：let const在代码块{}中会形成块级作用域</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i ++) &#123;</span><br><span class="line">    ary[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ary[<span class="number">0</span>]() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// let const 在代码块&#123;&#125; 形成块级作用域 （ES6） </span></span><br><span class="line"><span class="keyword">var</span> ary = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>, i ++) &#123;</span><br><span class="line">    ary[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ary[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    原数组不改变</span></span><br><span class="line"><span class="comment">    返回值是一个空数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.splice()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>说到作用域就又得谈到<code>作用域链</code>这个东西</p>
+<p>情况二： splice() 传一个参数 </p>
 </blockquote>
-<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><blockquote>
-<p>作用域链（查找变量机制）：当查找一个变量时，首先会在当前作用域是否声明过这个变量，如果声明过就使用当前的这个变量；如果没有声明过，就会向上一级作用域查找，一直查到全局作用域（window）为止，如果window上也没有就会报错Uncaught ReferenceError: xxx is not defined</p>
-</blockquote>
-<p>如何查找上级作用域？ 就看函数是在哪定义的，而不是看函数在哪执行的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">fe</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> num = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(num);</span><br><span class="line">   &#125;;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> fo = fe();</span><br><span class="line"> fo(); <span class="comment">// 200</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    删除从索引为1处一直到数组末尾的那几项（包括索引为1的那一项）</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">    返回值是被删除的那几项组成的新数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.splice(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [3]</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// [2, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// splice(-1) 删除数组最后一项</span></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">a.splice(<span class="number">-1</span>) <span class="comment">// 返回值[3]  原数组 [1, 2]</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><blockquote>
-<p>一个函数里返回一个内部函数，这个内部函数可以访问内部变量，称这个内部函数为闭包</p>
+<blockquote>
+<p>情况三：splice() 传两个参数</p>
 </blockquote>
-<p>私有作用域可以访问全局作用域下的变量，但是全局作用域不能访问私有作用域下的变量</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123; </span><br><span class="line">    <span class="comment">// fn是一个不销毁的作用域</span></span><br><span class="line">    <span class="comment">// n 的值被缓存下来</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">        a++;</span><br><span class="line">        n += a; <span class="comment">// 可以修改上级作用域的值</span></span><br><span class="line">        <span class="built_in">console</span>.log(n)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = fn(<span class="number">10</span>)</span><br><span class="line">f(<span class="number">1</span>)  <span class="comment">//=&gt;12</span></span><br><span class="line">f(<span class="number">2</span>)  <span class="comment">//=&gt;15</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, m)</span></span><br><span class="line"><span class="comment">    从索引从n开始（包括索引为n的那一项）删除m个</span></span><br><span class="line"><span class="comment">    将删除的那几项组成新数组返回</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// [5]</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", "world", 9]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况四：splice() 传三个及以上参数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, m, q, ...)</span></span><br><span class="line"><span class="comment">    从索引为n处开始（包括索引为n的那一项）删除m个 将第三项及第三项后面的参数全部插入到索引为n处</span></span><br><span class="line"><span class="comment">    被删除的数将组合成新数组返回</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">1</span>, <span class="number">3</span>, <span class="number">999</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ["world", 5, 9]</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", 999]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况五：splice() 传递三个及以上参数，第二项参数为零</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, 0, q, ...)</span></span><br><span class="line"><span class="comment">    将参数中第三项及第三项之后的参数插入到数组索引为n处</span></span><br><span class="line"><span class="comment">    没有删除项，返回值是一个空数组</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="number">999</span>, <span class="number">666</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// []</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", 999, 666, "world", 5, 9]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结合splice的各种参数情况</p>
+<ul>
+<li>splice(0, 0, x)可实现unshift()功能,可向数组开头添加一项或者多项；</li>
+<li>splice(array.length, 0, x)可实现push()功能，可向数组末尾添加一项或者多项；</li>
+<li>splice(-1) 可实现pop()功能，删除数组最后一项</li>
+<li>splice(0, 1) 可实现shift()功能， 删除数组第一项</li>
+</ul>
+</blockquote>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p>数组的截取，将截取的内容组成新数组（浅拷贝）返回，原数组不改变。slice() 具体的参数情况如下：</p>
+<blockquote>
+<p>slice()/slice(0) 不传参或者只传0，等价于将原数组克隆一份作为返回值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.slice()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// ['a', 's', 'd', 'f']</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ['a', 's', 'd', 'f']</span></span><br><span class="line"><span class="built_in">console</span>.log(arr === result) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>slice(n) 只传递一个参数，从索引为n处一直截取到数组末尾，将截取到的内容以新数组返回</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.slice(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// ['a', 's', 'd', 'f'] </span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ["d", "f"]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>slice(n, m) 从索引为n处截取到索引为m处（但不包括索引为m的这一项），将截取到的内容以新数组返回</p>
+</blockquote>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p>fill</p>
+<p>join</p>
+<p>entries<br>key<br>value</p>
+<p>// =&gt; 整理这些方法是一个漫长的过程。。。</p>
+
           
         
       
@@ -775,7 +1296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/11/firstBlog/">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/04/22/闭包这个鬼/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="niuzhaoxia">
@@ -794,7 +1315,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/11/firstBlog/" itemprop="url">CSS中的四种定位方式</a></h1>
+                <a class="post-title-link" href="/2019/04/22/闭包这个鬼/" itemprop="url">闭包这个鬼</a></h1>
         
 
         <div class="post-meta">
@@ -806,8 +1327,171 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T20:15:58+08:00">
-                2019-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-22T20:05:18+08:00">
+                2019-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>闭包是什么呢？ 在介绍闭包之前需要引入<code>变量提升</code> 和 <code>作用域</code>两个概念。</p>
+</blockquote>
+<h4 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h4><blockquote>
+<p>变量提升是浏览器的一种机制（ES5，但ES6中不存在变量提升）<br>变量提升（又称预解释），在JS代码执行之前，会对带var和带function的进行提前的声明和定义，对于带var的关键字会声明并赋值为undefined；对于带function的关键字会提前声明并赋值为函数体。变量提升结束之后，代码就会自上而下的执行。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// f fn()&#123;&#125; 控制台输出函数体fn</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">12</span> <span class="comment">// 给a赋值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 在代码自上而下执行阶段，会跳过函数定义部分</span></span><br><span class="line">    <span class="keyword">let</span> obj = &#123;</span><br><span class="line">        name: <span class="string">'hello world'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>变量提升中需要注意的几个点</code></strong></p>
+<ul>
+<li>自执行函数不参与变量提升</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// error 报错：fn未定义</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(h) <span class="comment">// undefined</span></span><br><span class="line">    <span class="keyword">var</span> h = <span class="number">12</span></span><br><span class="line">    <span class="built_in">console</span>.log(fn) <span class="comment">// 输出fn函数体</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数声明的优先级最高</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// 输出fn函数体</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn = <span class="number">12</span></span><br><span class="line"><span class="built_in">console</span>.log(fn) <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><blockquote>
+<p>作用域（栈内存）： 供JS代码执行的环境；<br>作用域分为三种：全局作用域、函数作用域、块级作用域（ES6）</p>
+</blockquote>
+<ul>
+<li>全局作用域：在页面一加载就已经形成</li>
+<li>函数作用域：在函数执行时形成</li>
+<li>块级作用域：let const在代码块{}中会形成块级作用域</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = []</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i ++) &#123;</span><br><span class="line">    ary[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ary[<span class="number">0</span>]() <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// let const 在代码块&#123;&#125; 形成块级作用域 （ES6） </span></span><br><span class="line"><span class="keyword">var</span> ary = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>, i ++) &#123;</span><br><span class="line">    ary[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">ary[<span class="number">0</span>]() <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>说到作用域就又得谈到<code>作用域链</code>这个东西</p>
+</blockquote>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><blockquote>
+<p>作用域链（查找变量机制）：当查找一个变量时，首先会在当前作用域是否声明过这个变量，如果声明过就使用当前的这个变量；如果没有声明过，就会向上一级作用域查找，一直查到全局作用域（window）为止，如果window上也没有就会报错Uncaught ReferenceError: xxx is not defined</p>
+</blockquote>
+<p>如何查找上级作用域？ 就看函数是在哪定义的，而不是看函数在哪执行的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">100</span>;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">fe</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">var</span> num = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(num);</span><br><span class="line">   &#125;;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">var</span> fo = fe();</span><br><span class="line"> fo(); <span class="comment">// 200</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><blockquote>
+<p>一个函数里返回一个内部函数，这个内部函数可以访问内部变量，称这个内部函数为闭包</p>
+</blockquote>
+<p>私有作用域可以访问全局作用域下的变量，但是全局作用域不能访问私有作用域下的变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123; </span><br><span class="line">    <span class="comment">// fn是一个不销毁的作用域</span></span><br><span class="line">    <span class="comment">// n 的值被缓存下来</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">        a++;</span><br><span class="line">        n += a; <span class="comment">// 可以修改上级作用域的值</span></span><br><span class="line">        <span class="built_in">console</span>.log(n)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f = fn(<span class="number">10</span>)</span><br><span class="line">f(<span class="number">1</span>)  <span class="comment">//=&gt;12</span></span><br><span class="line">f(<span class="number">2</span>)  <span class="comment">//=&gt;15</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/03/11/firstBlog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/11/firstBlog/" itemprop="url">CSS中的四种定位方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T20:15:58+08:00">
+                2019-03-11
               </time>
             
 
@@ -952,7 +1636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -965,7 +1649,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

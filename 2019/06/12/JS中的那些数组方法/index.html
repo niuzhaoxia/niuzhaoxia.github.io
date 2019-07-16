@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="javaScript 数组方法,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="在数组类(Array) 原型对象中提供了很多供数组调用的属性方法，这些方法让我们能够更加方便的来操作数组  从以下几个方面对这些数组方法进行分类  作用 返回值 是否改变原数组  push方法说明：向数组末尾添加 一项或多项原数组：改变返回值：添加后的数组长度 1234567// 向原数组添加一项或多项// 改变后数组长度// 改变原数组let arr = [1, 4, 5]let result">
+<meta name="keywords" content="javaScript 数组方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的那些数组方法">
 <meta property="og:url" content="https://niuzhaoxia.github.io/2019/06/12/JS中的那些数组方法/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在数组类(Array) 原型对象中提供了很多供数组调用的属性方法，这些方法让我们能够更加方便的来操作数组  从以下几个方面对这些数组方法进行分类  作用 返回值 是否改变原数组  push方法说明：向数组末尾添加 一项或多项原数组：改变返回值：添加后的数组长度 1234567// 向原数组添加一项或多项// 改变后数组长度// 改变原数组let arr = [1, 4, 5]let result">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-12T14:38:15.643Z">
+<meta property="og:updated_time" content="2019-06-14T12:54:45.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的那些数组方法">
+<meta name="twitter:description" content="在数组类(Array) 原型对象中提供了很多供数组调用的属性方法，这些方法让我们能够更加方便的来操作数组  从以下几个方面对这些数组方法进行分类  作用 返回值 是否改变原数组  push方法说明：向数组末尾添加 一项或多项原数组：改变返回值：添加后的数组长度 1234567// 向原数组添加一项或多项// 改变后数组长度// 改变原数组let arr = [1, 4, 5]let result">
 
 
 
@@ -316,7 +320,81 @@
       
 
       
-        
+        <blockquote>
+<p>在数组类(Array) 原型对象中提供了很多供数组调用的属性方法，这些方法让我们能够更加方便的来操作数组</p>
+</blockquote>
+<p>从以下几个方面对这些数组方法进行分类</p>
+<ul>
+<li>作用</li>
+<li>返回值</li>
+<li>是否改变原数组</li>
+</ul>
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><p>方法说明：向数组末尾添加 一项或多项<br>原数组：改变<br>返回值：添加后的数组长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向原数组添加一项或多项</span></span><br><span class="line"><span class="comment">// 改变后数组长度</span></span><br><span class="line"><span class="comment">// 改变原数组</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.push(<span class="number">1</span>, <span class="string">'hello'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 5  改变后数组长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 4, 5, 1, "hello"] 新数组</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unshift"><a href="#unshift" class="headerlink" title="unshift"></a>unshift</h3><p>方法说明：向数组开头添加 一项或多项<br>原数组：改变<br>返回值：添加后数组的长度</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.unshift(<span class="number">666</span>, <span class="string">'hello'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 5 =&gt; 修改后的数组长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [666, "hello", 1, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h3><p>方法说明：删除数组最后一项<br>原数组：改变<br>返回值：删除的那一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pop() 不接收参数, 一次只删除最后一项</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">11</span>, <span class="string">'Tom'</span>, <span class="number">45</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.pop()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 45</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [11, "Tom"]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h3><p>方法说明：删除数组第一项<br>原数组：改变<br>返回值：删除的那一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不接收参数</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">8</span> , <span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.shift()</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [8, 4]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p>数组的增删，具体使用分五种情况</p>
+<blockquote>
+<p>情况一：splice() 不传参数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    原数组不改变</span></span><br><span class="line"><span class="comment">    返回值是一个空数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.splice()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况二： splice() 传一个参数 </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    删除从索引为1处一直到数组末尾的那几项（包括索引为1的那一项）</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">    返回值是被删除的那几项组成的新数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.splice(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// [3]</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// [2, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// splice(-1) 删除数组最后一项</span></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">a.splice(<span class="number">-1</span>) <span class="comment">// 返回值[3]  原数组 [1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况三：splice() 传两个参数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, m)</span></span><br><span class="line"><span class="comment">    从索引从n开始（包括索引为n的那一项）删除m个</span></span><br><span class="line"><span class="comment">    将删除的那几项组成新数组返回</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// [5]</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", "world", 9]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况四：splice() 传三个及以上参数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, m, q, ...)</span></span><br><span class="line"><span class="comment">    从索引为n处开始（包括索引为n的那一项）删除m个 将第三项及第三项后面的参数全部插入到索引为n处</span></span><br><span class="line"><span class="comment">    被删除的数将组合成新数组返回</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">1</span>, <span class="number">3</span>, <span class="number">999</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ["world", 5, 9]</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", 999]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>情况五：splice() 传递三个及以上参数，第二项参数为零</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    splice(n, 0, q, ...)</span></span><br><span class="line"><span class="comment">    将参数中第三项及第三项之后的参数插入到数组索引为n处</span></span><br><span class="line"><span class="comment">    没有删除项，返回值是一个空数组</span></span><br><span class="line"><span class="comment">    原数组改变</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">'hello'</span>, <span class="string">'world'</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> result = ary.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="number">999</span>, <span class="number">666</span>)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// []</span></span><br><span class="line"><span class="built_in">console</span>.log(ary) <span class="comment">// ["hello", 999, 666, "world", 5, 9]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结合splice的各种参数情况</p>
+<ul>
+<li>splice(0, 0, x)可实现unshift()功能,可向数组开头添加一项或者多项；</li>
+<li>splice(array.length, 0, x)可实现push()功能，可向数组末尾添加一项或者多项；</li>
+<li>splice(-1) 可实现pop()功能，删除数组最后一项</li>
+<li>splice(0, 1) 可实现shift()功能， 删除数组第一项</li>
+</ul>
+</blockquote>
+<h3 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h3><p>数组的截取，将截取的内容组成新数组（浅拷贝）返回，原数组不改变。slice() 具体的参数情况如下：</p>
+<blockquote>
+<p>slice()/slice(0) 不传参或者只传0，等价于将原数组克隆一份作为返回值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.slice()</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// ['a', 's', 'd', 'f']</span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ['a', 's', 'd', 'f']</span></span><br><span class="line"><span class="built_in">console</span>.log(arr === result) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>slice(n) 只传递一个参数，从索引为n处一直截取到数组末尾，将截取到的内容以新数组返回</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>]</span><br><span class="line"><span class="keyword">let</span> result = arr.slice(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr) <span class="comment">// ['a', 's', 'd', 'f'] </span></span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// ["d", "f"]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>slice(n, m) 从索引为n处截取到索引为m处（但不包括索引为m的这一项），将截取到的内容以新数组返回</p>
+</blockquote>
+<h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p>fill</p>
+<p>join</p>
+<p>entries<br>key<br>value</p>
+<p>// =&gt; 整理这些方法是一个漫长的过程。。。</p>
+
       
     </div>
     
@@ -331,6 +409,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javaScript-数组方法/" rel="tag"># javaScript 数组方法</a>
+          
+        </div>
+      
 
       
       
@@ -340,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/闭包这个鬼/" rel="next" title="闭包这个鬼">
-                <i class="fa fa-chevron-left"></i> 闭包这个鬼
+              <a href="/2019/06/12/bfc/" rel="next" title="什么是BFC">
+                <i class="fa fa-chevron-left"></i> 什么是BFC
               </a>
             
           </div>
@@ -404,8 +488,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -422,7 +515,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -435,7 +528,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -458,6 +551,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">1.</span> <span class="nav-text">push</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unshift"><span class="nav-number">2.</span> <span class="nav-text">unshift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-number">3.</span> <span class="nav-text">pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift"><span class="nav-number">4.</span> <span class="nav-text">shift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splice"><span class="nav-number">5.</span> <span class="nav-text">splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice"><span class="nav-number">6.</span> <span class="nav-text">slice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">7.</span> <span class="nav-text">concat</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="js 异步,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="Promise 是什么？ Promise 对象用于表示一个异步操作的最终状态（完成或失败），以及该异步操作的结果值。Promise的出现解决了回调地狱的问题。  Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？Promise 实例有三个状态：fulfilled、rejected、pending  pending：初始值 fulfilled: 代表操作成功 由pendin">
+<meta name="keywords" content="js 异步">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象编程">
-<meta property="og:url" content="https://niuzhaoxia.github.io/2019/06/12/面向对象编程/index.html">
+<meta property="og:title" content="promise原理">
+<meta property="og:url" content="https://niuzhaoxia.github.io/2019/06/14/promise原理/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Promise 是什么？ Promise 对象用于表示一个异步操作的最终状态（完成或失败），以及该异步操作的结果值。Promise的出现解决了回调地狱的问题。  Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？Promise 实例有三个状态：fulfilled、rejected、pending  pending：初始值 fulfilled: 代表操作成功 由pendin">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-12T14:39:31.858Z">
+<meta property="og:updated_time" content="2019-07-06T00:39:41.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象编程">
+<meta name="twitter:title" content="promise原理">
+<meta name="twitter:description" content="Promise 是什么？ Promise 对象用于表示一个异步操作的最终状态（完成或失败），以及该异步操作的结果值。Promise的出现解决了回调地狱的问题。  Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？Promise 实例有三个状态：fulfilled、rejected、pending  pending：初始值 fulfilled: 代表操作成功 由pendin">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://niuzhaoxia.github.io/2019/06/12/面向对象编程/">
+  <link rel="canonical" href="https://niuzhaoxia.github.io/2019/06/14/promise原理/">
 
 
 
 
 
-  <title>面向对象编程 | Hexo</title>
+  <title>promise原理 | Hexo</title>
   
 
 
@@ -249,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/12/面向对象编程/">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/06/14/promise原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="niuzhaoxia">
@@ -266,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面向对象编程</h1>
+          <h1 class="post-title" itemprop="name headline">promise原理</h1>
         
 
         <div class="post-meta">
@@ -278,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-12T22:39:31+08:00">
-                2019-06-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T19:17:00+08:00">
+                2019-06-14
               </time>
             
 
@@ -316,7 +320,29 @@
       
 
       
-        
+        <h3 id="Promise-是什么？"><a href="#Promise-是什么？" class="headerlink" title="Promise 是什么？"></a>Promise 是什么？</h3><blockquote>
+<p>Promise 对象用于表示一个异步操作的最终状态（完成或失败），以及该异步操作的结果值。Promise的出现解决了回调地狱的问题。</p>
+</blockquote>
+<h3 id="Promise-有几种状态？Promise-的特点是什么，分别有什么优缺点？"><a href="#Promise-有几种状态？Promise-的特点是什么，分别有什么优缺点？" class="headerlink" title="Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？"></a>Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？</h3><p>Promise 实例有三个状态：<code>fulfilled</code>、<code>rejected</code>、<code>pending</code></p>
+<ul>
+<li>pending：初始值</li>
+<li>fulfilled: 代表操作成功 由pending =&gt; fulfilled</li>
+<li>rejected: 代表操作失败 由pending =&gt; rejected</li>
+</ul>
+<p>Promise的状态转换过程是<code>不可逆</code>的，一旦发生改变就不会在变动；如果在new Promise()的回调函数中就没有执行成功函数也没有执行失败函数，那么Promise实例的状态一直是pending</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// resolved 和 rejected 只能执行一个</span></span><br><span class="line"><span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolved, rejected</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">        resolved(<span class="string">'success'</span>) <span class="comment">// 成功的回调函数</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// setTimeout()是一个异步操作，会先执行rejected()</span></span><br><span class="line">    rejected(<span class="string">'failed'</span>) <span class="comment">// 失败的回调函数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">p.then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;, (err) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行结果：</span></span><br><span class="line"><span class="comment">// failed</span></span><br><span class="line"><span class="comment">// hello world</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>p.then() 的参数是两个回调函数，</p>
+</blockquote>
+<ol start="2">
+<li>Promise 构造函数是同步还是异步执行？then 呢？Promise 如何实现 then 处理？</li>
+<li>Promise 和 setTimeout 的区别？</li>
+<li>如何实现 Promise.all() ？</li>
+<li>如何实现 Promise.prototype.finally() ？</li>
+<li>all() 的用法？</li>
+</ol>
+<h3 id="手写Promise源码"><a href="#手写Promise源码" class="headerlink" title="手写Promise源码"></a>手写Promise源码</h3>
       
     </div>
     
@@ -331,6 +357,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js-异步/" rel="tag"># js 异步</a>
+          
+        </div>
+      
 
       
       
@@ -340,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/JS中的那些数组方法/" rel="next" title="JS中的那些数组方法">
-                <i class="fa fa-chevron-left"></i> JS中的那些数组方法
+              <a href="/2019/06/12/面向对象编程/" rel="next" title="面向对象编程">
+                <i class="fa fa-chevron-left"></i> 面向对象编程
               </a>
             
           </div>
@@ -350,8 +382,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/14/promise原理/" rel="prev" title="promise原理">
-                promise原理 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/06/解决跨域问题的几种方法/" rel="prev" title="解决跨域问题的几种方法">
+                解决跨域问题的几种方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -404,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -458,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-是什么？"><span class="nav-number">1.</span> <span class="nav-text">Promise 是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-有几种状态？Promise-的特点是什么，分别有什么优缺点？"><span class="nav-number">2.</span> <span class="nav-text">Promise 有几种状态？Promise 的特点是什么，分别有什么优缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写Promise源码"><span class="nav-number">3.</span> <span class="nav-text">手写Promise源码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
