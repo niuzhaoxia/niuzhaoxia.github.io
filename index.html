@@ -249,6 +249,380 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/07/31/jQuery总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="niuzhaoxia">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/headPortrait.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/31/jQuery总结/" itemprop="url">'jQuery总结'</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T11:34:00+08:00">
+                2019-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1、掌握jq常用的获取元素对象的方式以及常用的选择器"><a href="#1、掌握jq常用的获取元素对象的方式以及常用的选择器" class="headerlink" title="1、掌握jq常用的获取元素对象的方式以及常用的选择器"></a>1、掌握jq常用的获取元素对象的方式以及常用的选择器</h4><blockquote>
+<p>jquery通过选择器的方式获取的元素，不一定只获取一个，而是不管获取到几个都会返回一个元素集合（类数组），这些元素在类数组中获得了一个索引值。原生方法获取不到时会返回null，jq获取不到仍然返回一个对象。在jq的返回对象中有一个length属性，这个属性表示获取到的个数。</p>
+</blockquote>
+<ol>
+<li>基本选择器</li>
+</ol>
+<ul>
+<li>id 选择器 #ID</li>
+<li>className 类选择器 .className</li>
+<li>标签选择器 p ul li div<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'id 选择器'</span>, $(<span class="string">'#tabBox'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'className 选择器'</span>, $(<span class="string">'.header'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'标签选择器 '</span>, $(<span class="string">'li'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'原生方法获取不到时 '</span>, <span class="built_in">document</span>.getElementById(<span class="string">'zhangsan'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'jq 获取不到时'</span>, $(<span class="string">'#tabBox&gt;li'</span>));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<ol start="2">
+<li>层级选择器<ul>
+<li>后代选择器 就是一个空格 #tabBox li （获取id为tabBox的所有子孙代中的li）；</li>
+<li>子级选择器 &gt; #tabBox &gt; ul (只在儿子代中查找)</li>
+<li>兄弟选择器 + .header + div </li>
+<li>获取所有的弟弟 li.active ~ </li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#tabBox li'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header + div'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'li.active ~'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>过滤选择器<ul>
+<li>:first 获取第一个</li>
+<li>:last 获取最后一个</li>
+<li>:odd 获取奇数索引的</li>
+<li>:even 获取偶数索引的</li>
+<li>:not(selector) 除了selector的都要； :not(first) 除了第一个都要</li>
+<li>:eq(index) 获取索引为index的</li>
+<li>:gt(index) 获取比索引index大的</li>
+<li>:lt(index) 获取比索引index小的</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:first'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:last'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:odd'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:even'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:not(:first)'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:eq(1)'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:gt(1)'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li:lt(1)'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>内容选择器<ul>
+<li>:contains(‘内容’) 获取包含指定内容的元素</li>
+<li>:empty 获取空标签元素</li>
+<li>:has(selector) 获取包含指定选择器元素的元素</li>
+<li>:hidden 获取不可见的元素对象</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'p:contains("霸道")'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'p:empty'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'p:has("span")'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'p:hidden'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>属性选择器<ul>
+<li>[attr=val] 获取含有属性attr并且其值是val的元素</li>
+<li>[attr^=val] 获取含有attr属性并且其值是以val开头的元素</li>
+<li>[attr$=val] 获取含有attr属性并且其值是以val结尾的元素</li>
+<li>5.4 [attr*=val] 获取含有attr属性并且其值包含val的元素</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'input[name=man]'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'input[name^=man]'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'input[name$=man]'</span>));</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'input[name*=man]'</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、jq对象和原生元素对象互转"><a href="#2、jq对象和原生元素对象互转" class="headerlink" title="2、jq对象和原生元素对象互转"></a>2、jq对象和原生元素对象互转</h4><blockquote>
+<p><code>jq对象转原生对象</code>：jq对象中索引对应的就是原生元素对象，我们可以通过[索引]就能获取到这个原生对象，此外还有两种方法可以获取这个原生对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jq对象.get(index) index 是你想获取的原生对象的索引</span></span><br><span class="line"><span class="comment">// let $ul = $('#emptyUl');</span></span><br><span class="line"><span class="comment">// console.log($ul[0]);</span></span><br><span class="line"><span class="comment">// console.log($ul.get(0));</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>原生对象转jq对象</code>：将我们通过原生方法获取到原生对象当做参数传给<strong>$方法（$(原生对象)）</strong>就可以把原生对象转成jq对象。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ul = <span class="built_in">document</span>.getElementById(<span class="string">'emptyUl'</span>);</span><br><span class="line"><span class="keyword">let</span> $ul = $(ul); <span class="comment">// 把ul原生对象当做实参传给 $() 方法</span></span><br><span class="line"><span class="built_in">console</span>.log($ul);</span><br><span class="line">$ul.html(<span class="string">'&lt;li&gt;转换之后就是爽&lt;/li&gt;'</span>);</span><br><span class="line">ul.html(<span class="string">'&lt;li&gt;123456789&lt;/li&gt;'</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、jq常用的方法"><a href="#3、jq常用的方法" class="headerlink" title="3、jq常用的方法"></a>3、jq常用的方法</h4><blockquote>
+<p>以 <strong>let $tabBox = $(‘#tabBox’)</strong> 为例</p>
+</blockquote>
+<ol>
+<li><code>height()</code>: 不传参数是获取元素对象的高度，传参就是修改元素对象的高度</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.height());</span><br><span class="line">$tabBox.height(<span class="number">200</span> + <span class="string">'rem'</span>); </span><br><span class="line"><span class="comment">// 默认单位是px，如果需要其他单位，就需要显示的设置，如设置rem（一个单位）</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><code>width()</code>: 获取元素对象的宽度，传递参数是设置元素对象的宽度</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.width());</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><code>offset</code> 获取元素到body左侧和上侧的偏移距离，返回值是一个对象{left: ,top: }</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.offset());</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><code>scrollTop() / scrollLeft()</code> 获取纵向 / 横向滚动条卷去的距离<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="built_in">document</span>.documentElement).scrollTop());</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<ol start="5">
+<li><code>innerHeight() / innerWidth()</code>获取当前元素的高度 / 宽度 等效于</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clientHeight / clientWidth</span><br><span class="line"><span class="built_in">console</span>.log($tabBox.innerHeight());</span><br><span class="line"><span class="built_in">console</span>.log($tabBox.innerWidth());</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><code>outerHeight() / outerWidth()</code> 获取元素包含边框的高度/宽度 相当于 offsetHeight / offsetWidth</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.outerHeight());</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><code>hasClass(类名)</code> 判断当前元素有没有这个类名，有就返回true否则返回false</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.hasClass(<span class="string">'tabBox1'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li><code>addClass(类名)</code>为当前元素追加类名，返回当前jq元素对象（return this）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.addClass(<span class="string">'classByJq'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><code>removeClass(类名)</code> 移除当前元素的某一个类名，返回当前jq元素对象</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($tabBox.removeClass(<span class="string">'classByJq'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li><code>append()</code> 向元素对象内追加元素</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> $emptyUl = $(<span class="string">'#emptyUl'</span>);</span><br><span class="line">$emptyUl.append($(<span class="string">'&lt;li&gt;12345678&lt;/li&gt;'</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li><code>元素.appendTo(容器)</code>将当前插入到指定容器中</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'&lt;li&gt;aaaaaaaaaaa&lt;/li&gt;'</span>).appendTo($emptyUl);</span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li><code>prepend() / prependTo()</code> 向容器开头添加元素对象</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$emptyUl.prepend($(<span class="string">'&lt;li&gt;bbbbbbbbbb&lt;/li&gt;'</span>));</span><br><span class="line">$(<span class="string">'&lt;li&gt;ccccccccc&lt;/li&gt;'</span>).prependTo($emptyUl);</span><br></pre></td></tr></table></figure>
+
+<ol start="13">
+<li><code>before() / after()</code> 给当前元素之前或者之后添加【兄弟】元素<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$emptyUl.before($(<span class="string">'&lt;li&gt;ddddddddd&lt;/li&gt;'</span>));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<ol start="14">
+<li><p><code>insertBefore() / insertAfter</code> 将当前元素添加到参照元素之前或者之后</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newObj = $(<span class="string">'&lt;div&gt;wwwwww&lt;/div&gt;'</span>); </span><br><span class="line"><span class="comment">// 使用jq创建一个新元素，无需createElement。</span></span><br><span class="line">newObj.insertBefore($emptyUl);</span><br><span class="line">newObj.insertAfter($emptyUl);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>replaceAll(selector)</code> 用当前元素替换selector匹配到元素</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'&lt;ol&gt;&lt;/ol&gt;'</span>).replaceAll(<span class="string">'ul'</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="16">
+<li><p><code>元素.remove()</code> 移除元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$emptyUl.remove();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>next() / nextAll()</code> 获取当前元素的下一个弟弟 / 获取所有的弟弟</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($emptyUl.next());</span><br><span class="line"><span class="built_in">console</span>.log($emptyUl.nextAll());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>prev() / prevAll()</code>获取当前元素的上一个哥哥 / 获取当前元素所有的哥哥</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#contentFilter'</span>).prev());</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#contentFilter'</span>).prevAll());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>children()</code> 获取当前元素的元素儿子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#contentFilter'</span>).children()); <span class="comment">// 获取所有的儿子</span></span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#contentFilter'</span>).children(<span class="string">'.first'</span>)); <span class="comment">// 获取有first类名的儿子（children() 方法还可以使用其他选择器过滤）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>parent()</code> 获取当前元素的元素父亲</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.first'</span>).parent());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>filter(selector)</code> 在同级中把满足selector的元素获取到（同级查找，在兄弟之间查找）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'.header li'</span>).filter(<span class="string">'.active'</span>));</span><br><span class="line"><span class="comment">// 把header下的li并且是带有active类名的li获取到</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>find(selector)</code> 从当前元素的后代中获取满足selector的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#tabBox'</span>).find(<span class="string">'li.active'</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><code>css 方法</code></strong>，</p>
+</li>
+</ol>
+<ul>
+<li>元素.css(‘width’) 获取元素的width</li>
+<li>元素.css(‘width’, ‘200px’) 设置元素的width</li>
+<li>元素.css({width: ‘200px’, backgroundColor: ‘#00b38a’})</li>
+<li>$(‘#tabBox’).css(‘height’, 250); // 不写单位，默认单位是px</li>
+<li>console.log($(‘#tabBox’).css(‘width’)); // 返回了一个字符串，后面就不能链式调用（链式调用也叫级联）</li>
+<li>console.log($(‘#tabBox’).css(‘width’, 200)); // 返回了jq对象，可以继续链式调用</li>
+</ul>
+<ol start="24">
+<li><p><code>text()</code> 传参就是设置元素的innerText，不传是获取元素的innerText</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#tabBox'</span>).text());</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'li.active'</span>).text());</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'li.active'</span>).text(<span class="string">'嘻哈'</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>html()</code> 传参就是设置元素的innerHTML，不传参就是获取innerHTML</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#tabBox'</span>).html());</span><br><span class="line"><span class="built_in">console</span>.log($(<span class="string">'#tabBox'</span>).html(<span class="string">'&lt;p&gt;这是一个p&lt;/p&gt;'</span>));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="4、jq绑定事件和移除事件的方法"><a href="#4、jq绑定事件和移除事件的方法" class="headerlink" title="4、jq绑定事件和移除事件的方法"></a>4、jq绑定事件和移除事件的方法</h4><blockquote>
+<p>1、 将原生事件名中on去掉，例如onclick，jq提供了一个对应事件名的方法，click() ，要把事件触发时的执行的事件函数作为参数传给click方法。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">'来啊，快活啊'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 以上为原生方法</span></span><br><span class="line">$(btn).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">'来啊，快活啊'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">'欢迎下次常来'</span>);</span><br><span class="line">&#125;;</span><br><span class="line">$(btn).click(fun);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2、 on() 方法：语法：jq对象.on(事件名[不带on], 事件函数);</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(btn).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'这个是on方法绑定的'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3、 trigger() 用代码触发事件 参数就是不带on的事件名 ；返回值是当前jq对象，可以继续链式调用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#btn'</span>).trigger(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>4、off() 移除事件，参数是不带on的事件名，返回值是当前jq对象，可以继续链式调用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#btn'</span>).off(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、jq简单动画效果"><a href="#5、jq简单动画效果" class="headerlink" title="5、jq简单动画效果"></a>5、jq简单动画效果</h4><blockquote>
+<p><code>hide() / show()</code> 隐藏元素 / 显示元素 参数是完成动画时间(ms) ，还可以写 ‘slow’慢（600ms）， ‘fast’ 快(200ms)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#bt1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).hide(<span class="string">'fast'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'#bt2'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).show(<span class="number">3000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>slideUp() / slideDown()</code> 向上滑动收起 / 向下滑动展开</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#bt1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).slideUp();</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'#bt2'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).slideDown();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>fadeIn() / fadeOut()</code> 淡入/淡出</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#bt1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).fadeOut();</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'#bt2'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   $(<span class="string">'.a-obj'</span>).fadeIn();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>slideToggle()</code> 第一次如果是收起的，执行slideToggle就是展开，如果上一次是展开的，我们执行slideToggle就是收起，适合做点击展开，再点击收起的需求</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#bt3'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">'.a-obj'</span>).slideToggle();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>animate() 语法：<code>$(selector).animate(target, duration, easing, afterCallback)</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.a-obj'</span>).animate(&#123;</span><br><span class="line">  left: <span class="number">300</span></span><br><span class="line">&#125;, <span class="number">4000</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>stop()</code> 停止当前元素正在进行的动画，不管到没到终点都得停；<br><code>finish()</code> 停止当前元素正在进行的动画，但是它是忽略动画规定的时间，一下子到终点。</p>
+</blockquote>
+<h4 id="6、jq-ajax的使用方法、配置参数及意义"><a href="#6、jq-ajax的使用方法、配置参数及意义" class="headerlink" title="6、jq ajax的使用方法、配置参数及意义"></a>6、jq ajax的使用方法、配置参数及意义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url: <span class="string">'json/data.json'</span>, <span class="comment">// 接口地址</span></span><br><span class="line">	method: <span class="string">'GET'</span>, <span class="comment">// 请求方式</span></span><br><span class="line">	<span class="keyword">async</span>: <span class="literal">false</span>, <span class="comment">// 是否异步</span></span><br><span class="line">	dataType: <span class="string">'json'</span>, <span class="comment">// 数据类型 一般为json，也可以设置其他如xml</span></span><br><span class="line">	success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(data)</span><br><span class="line">	&#125;,</span><br><span class="line">	error: <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(err)</span><br><span class="line">	&#125;,</span><br><span class="line">	cache: <span class="literal">false</span> <span class="comment">// 是否设置缓存 一般不缓存</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="7、jq-的each方法遍历常用的数据结构"><a href="#7、jq-的each方法遍历常用的数据结构" class="headerlink" title="7、jq 的each方法遍历常用的数据结构"></a>7、jq 的each方法遍历常用的数据结构</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历数组</span></span><br><span class="line">$.each([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span> (<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index, item);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 遍历对象</span></span><br><span class="line">$.each(&#123;<span class="attr">name</span>: <span class="string">'zf'</span>, <span class="attr">age</span>: <span class="number">11</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">key, val</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, val);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>jq内部隐式调用each</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.header &gt; li'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// jq内部如果发现你获取到是一个元素集合，它会隐式调用each方法循环完成事件绑定。</span></span><br><span class="line">  <span class="comment">// jq事件函数中的this指向绑定该事件的元素。</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="8、向jq自身上扩展方法-amp-向jq原型上添加方法"><a href="#8、向jq自身上扩展方法-amp-向jq原型上添加方法" class="headerlink" title="8、向jq自身上扩展方法&amp;向jq原型上添加方法"></a>8、向jq自身上扩展方法&amp;向jq原型上添加方法</h4><ol>
+<li>向jq自身上扩展方法: $.extend({方法名：方法对应的函数, ….})</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am bingo'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">$.sayName();</span><br><span class="line"><span class="comment">// $('#fields').sayName(); // 报错，因为方法是定义jq自身的，只能jq自己调用</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>向jq的原型上扩展方法：$.fn.extend({方法名：function () {}, …})</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.fn.extend(&#123;</span><br><span class="line">	 hello: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#fields'</span>).hello();</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://niuzhaoxia.github.io/2019/07/09/js的n种继承方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1636,7 +2010,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
